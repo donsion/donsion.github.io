@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Spring揭密-学习笔记4-Spring的IoC容器之BeanFactory | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Spring的IoC容器是一个IoC Service Provider，同时是一个提供IoC支持的轻量级容器，除了基本的IoC支持，它作为轻量级容器还提供了IoC之外的支持。如在Spring的IoC容器之上，Spring还提供了 相应的AOP框架支持、企业级服务集成等服务。 Spring两种容器类型：  BeanFactory。基础类型IoC容器，提供完整的IoC服务支持。如果没有特殊指定，默认采">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring揭密-学习笔记4-Spring的IoC容器之BeanFactory">
+<meta property="og:url" content="http://yoursite.com/2017/11/27/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b04-spring-e7-9a-84ioc-e5-ae-b9-e5-99-a8-e4-b9-8bbeanfactory/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Spring的IoC容器是一个IoC Service Provider，同时是一个提供IoC支持的轻量级容器，除了基本的IoC支持，它作为轻量级容器还提供了IoC之外的支持。如在Spring的IoC容器之上，Spring还提供了 相应的AOP框架支持、企业级服务集成等服务。 Spring两种容器类型：  BeanFactory。基础类型IoC容器，提供完整的IoC服务支持。如果没有特殊指定，默认采">
+<meta property="og:updated_time" content="2018-01-26T02:21:48.945Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring揭密-学习笔记4-Spring的IoC容器之BeanFactory">
+<meta name="twitter:description" content="Spring的IoC容器是一个IoC Service Provider，同时是一个提供IoC支持的轻量级容器，除了基本的IoC支持，它作为轻量级容器还提供了IoC之外的支持。如在Spring的IoC容器之上，Spring还提供了 相应的AOP框架支持、企业级服务集成等服务。 Spring两种容器类型：  BeanFactory。基础类型IoC容器，提供完整的IoC服务支持。如果没有特殊指定，默认采">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b04-spring-e7-9a-84ioc-e5-ae-b9-e5-99-a8-e4-b9-8bbeanfactory" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/27/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b04-spring-e7-9a-84ioc-e5-ae-b9-e5-99-a8-e4-b9-8bbeanfactory/" class="article-date">
+  <time datetime="2017-11-27T08:25:13.000Z" itemprop="datePublished">2017-11-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Spring/">Spring</a>►<a class="article-category-link" href="/categories/Spring/学习/">学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Spring揭密-学习笔记4-Spring的IoC容器之BeanFactory
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Spring的IoC容器是一个IoC Service Provider，同时是一个提供IoC支持的轻量级容器，除了基本的IoC支持，它作为轻量级容器还提供了IoC之外的支持。如在Spring的IoC容器之上，Spring还提供了 相应的AOP框架支持、企业级服务集成等服务。</p>
+<p>Spring两种容器类型：</p>
+<ul>
+<li>BeanFactory。基础类型IoC容器，提供完整的IoC服务支持。如果没有特殊指定，默认采用延 迟初始化策略（lazy-load）。只有当客户端对象需要访问容器中的某个受管对象的时候，才对 该受管对象进行初始化以及依赖注入操作。所以，相对来说，容器启动初期速度较快，所需要的资源有限。对于资源有限，并且功能要求不是很严格的场景， BeanFactory 是比较合适的 IoC容器选择。</li>
+<li>ApplicationContext。ApplicationContext 在 BeanFactory 的基础上构建，是相对比较高 级的容器实现，除了拥有 BeanFactory 的所有支持， ApplicationContext 还提供了其他高级特性，比如事件发布、国际化信息支持等。ApplicationContext 所管理 的对象，在该类型容器启动之后，默认全部初始化并绑定完成。所以，相对于 BeanFactory 来 说， ApplicationContext 要求更多的系统资源，同时，因为在启动时就完成所有初始化，容 器启动时间较之 BeanFactory 也会长一些。在那些系统资源充足，并且要求更多功能的场景中， ApplicationContext 类型的容器是比较合适的选择。<br>&nbsp;</li>
+</ul>
+<p>在BeanFactory出现之前，我们通常会直接在应用程序的入口类的main方法中， 自己实例化相应的对象并调用之，如以下代码所示：</p>
+<p><pre class="lang:default decode:true ">FXNewsProvider newsProvider = new FXNewsProvider();<br> newsProvider.getAndPersistNews();</pre><br>不过， 现在既然有了 BeanFactory ， 我们通常只需将“生产线图纸”交给 BeanFactory ， 让 BeanFactory为我们生产一个FXNewsProvider，如以下代码所示：</p>
+<p><pre class="lang:default decode:true ">BeanFactory container = ➥ new XmlBeanFactory(new ClassPathResource(“配置文件路径”));<br> FXNewsProvider newsProvider = (FXNewsProvider)container.getBean(“djNewsProvider”);<br>newsProvider.getAndPersistNews();</pre><br>或者如以下代码所示：</p>
+<p><pre class="lang:default decode:true ">ApplicationContext container = ➥ new ClassPathXmlApplicationContext(“配置文件路径”);<br>FXNewsProvider newsProvider = (FXNewsProvider)container.getBean(“djNewsProvider”);<br>newsProvider.getAndPersistNews();</pre><br>亦或如以下代码所示：</p>
+<p><pre class="lang:default decode:true ">ApplicationContext container = ➥new FileSystemXmlApplicationContext(“配置文件路径”);<br>FXNewsProvider newsProvider = (FXNewsProvider)container.getBean(“djNewsProvider”);<br> newsProvider.getAndPersistNews();</pre><br>&nbsp;</p>
+<p>BeanFactory的XML之旅</p>
+<ol>
+<li><p>&lt;beans&gt;，是XML配置文件中最顶层的元素， 它下面可以包含0或者1个 &lt;description&gt; 和多个 &lt;bean&gt;以及&lt;import&gt;或者&lt;alias&gt;，&lt;beans&gt;作为所有&lt;bean&gt;的“统帅”，它拥有相应的属性（attribute）对所辖的&lt;bean&gt;进行统一 的默认行为设置，包括如下几个。</p>
+<ol>
+<li>default-lazy-init 。其值可以指定为 true 或者 false ，默认值为 false 。用来标志是否对所 有的 &lt;bean&gt; 进行延迟初始化。</li>
+<li>default-autowire 。可以取值为 no 、 byName 、 byType 、 constructor 以及 autodetect 。默 认值为 no ，如果使用自动绑定的话，用来标志全体bean使用哪一种默认绑定方式。</li>
+<li>default-dependency-check 。可以取值 none 、 objects 、 simple 以及 all ，默认值为 none ， 即不做依赖检查。</li>
+<li>default-init-method 。如果所管辖的 &lt;bean&gt; 按照某种规则，都有同样名称的初始化方法的 话，可以在这里统一指定这个初始化方法名，而不用在每一个 &lt;bean&gt; 上都重复单独指定。</li>
+<li>default-destroy-method 。与 default-init-method 相对应，如果所管辖的bean有按照某种 规则使用了相同名称的对象销毁方法，可以通过这个属性统一指定。</li>
+</ol>
+</li>
+<li><p>&lt;description&gt; 可以通过&lt;description&gt;在配置的文件中指定一些描述性的信息。通常情况下，该元素是省略的。</p>
+</li>
+<li>通常情况下，可以根据模块功能或者层次关系，将配置信息分门别类地放到多个配置文件中。在 想加载主要配置文件，并将主要配置文件所依赖的配置文件同时加载时，可以在这个主要的配置文件 中通过 &lt;import&gt;元素对其所依赖的配置文件进行引用</li>
+<li>可以通过&lt;alias&gt;为某些&lt;bean&gt;起一些“外号”（别名），通常情况下是为了减少输入。比如， 假设有个&lt;bean&gt;，它的名称为dataSourceForMasterDatabase，你可以为其添加一个&lt;alias&gt;，像 这样 &lt;alias name=”dataSourceForMasterDatabase” alias=”masterDataSource”/&gt;。 以后通过 dataSourceForMasterDatabase或者masterDataSource来引用这个&lt;bean&gt;都可以。<br>&nbsp;</li>
+</ol>
+<p>孤孤单单一个Bean</p>
+<ul>
+<li>id属性，每个注册到容器的对象都需要一个唯一标志，通过id属性来指定当前注册对 象的beanName是什么。内部&lt;bean&gt;以及不需要根据 beanName明确依赖关系的场合可以省略，除了可以使用 id 来指定 &lt;bean&gt; 在容器中的标志， 还可以使用 name 属性来指定 &lt;bean&gt; 的别名。</li>
+<li>class属性  每个注册到容器的对象都需要通过&lt;bean&gt;元素的class属性指定其类型，否则，容器可不知道这 个对象到底是何方神圣。在大部分情况下，该属性是必须的。<br>&nbsp;</li>
+</ul>
+<p>构造方法注入的XML之道</p>
+<ul>
+<li>按照Spring的IoC容器配置格式，要通过构造方法注入方式，为当前业务对象注入其所依赖的对象， 需要使用&lt;constructor-arg&gt;。<br><pre class="lang:default decode:true ">&lt;bean id=”djNewsProvider” class=”..FXNewsProvider”&gt;<br> &lt;constructor-arg&gt; <pre><code>&amp;lt;ref bean=&quot;djNewsListener&quot;/&amp;gt;
+</code></pre> &lt;/constructor-arg&gt;<br>&lt;constructor-arg&gt; <pre><code>&amp;lt;ref bean=&quot;djNewsPersister&quot;/&amp;gt; 
+</code></pre>&lt;/constructor-arg&gt;<br>&lt;/bean&gt;</pre><br>通过这个元素来指明容器将为 djNewsProvider这个&lt;bean&gt;注入通过&lt;ref&gt;所引用的Bean实例，也可以写成<br><pre class="lang:default decode:true ">&lt;bean id=”djNewsProvider” class=”..FXNewsProvider”&gt;<br> &lt;constructor-arg ref=”djNewsListener”/&gt;<br>&lt;constructor-arg ref=”djNewsPersister”/&gt;<br>&lt;/bean&gt;</pre><br>有时候，容器在加载XML配置无法明确配置项与对象的构造方法参数 列表的一一对应关系，就需要请&lt;constructor-arg&gt;的type或者index属性。比如，对象存在多个构造方法，当参数列表数目相同而类型不同的时候，容器无法区分应该使用哪个构造方法来实例化 对象，或者构造方法可能同时传入最少两个类型相同的对象。<br>&nbsp;</li>
+</ul>
+<p>setter方法注入的XML之道</p>
+<ul>
+<li>与构造方法注入可以使用 &lt;constructor-arg&gt;注入配置相对应， Spring为setter方法注入提供了 &lt;property&gt;元素。&lt;property&gt;有一个name属性（attribute），用来指定该&lt;property&gt;将会注入的对象所对应的实例 变量名称。之后通过value或者ref属性或者内嵌的其他元素来指定具体的依赖对象引用或者值，如以</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/27/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b04-spring-e7-9a-84ioc-e5-ae-b9-e5-99-a8-e4-b9-8bbeanfactory/" data-id="cjcvaxl940012quxyl55c39q1" class="article-share-link">Compartir</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/28/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-aop/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nuevo</strong>
+      <div class="article-nav-title">
+        
+          Spring揭密学习笔记-AOP
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/27/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b02-ioc-service-provider/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">Spring揭密-学习笔记2-IoC Service Provider</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorías</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nube de Tags</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MySQL/" style="font-size: 20px;">MySQL</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivos</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Posts recientes</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/25/python-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e7-94-9f-e6-88-90-e5-99-a8-trashed/">Python学习笔记-生成器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/28/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-aop/">Spring揭密学习笔记-AOP</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/27/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b04-spring-e7-9a-84ioc-e5-ae-b9-e5-99-a8-e4-b9-8bbeanfactory/">Spring揭密-学习笔记4-Spring的IoC容器之BeanFactory</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/27/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b02-ioc-service-provider/">Spring揭密-学习笔记2-IoC Service Provider</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

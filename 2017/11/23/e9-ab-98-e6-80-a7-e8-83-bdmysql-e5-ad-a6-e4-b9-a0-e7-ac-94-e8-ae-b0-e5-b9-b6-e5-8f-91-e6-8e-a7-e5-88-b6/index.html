@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>高性能MySQL学习笔记1.3-并发控制 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;nbsp; 并发控制  只要有多个查询需要在同一时刻修改数据，就会产生并发控制的问题。 在处理并发读或写时可以用锁系统来解决，锁有两种类型。  共享锁（读锁），多个客户在同一时刻可以同时读取同一个资源。 排他锁（写锁），会阻塞其他的写锁和读锁。&amp;nbsp;    锁粒度  表锁  会锁定整张表，阻塞其他用户对该表的所有读和写操作。   行锁&amp;nbsp;   事务  原子性 一致性 隔离性 持久性">
+<meta name="keywords" content="MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高性能MySQL学习笔记1.3-并发控制">
+<meta property="og:url" content="http://yoursite.com/2017/11/23/e9-ab-98-e6-80-a7-e8-83-bdmysql-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e5-b9-b6-e5-8f-91-e6-8e-a7-e5-88-b6/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="&amp;nbsp; 并发控制  只要有多个查询需要在同一时刻修改数据，就会产生并发控制的问题。 在处理并发读或写时可以用锁系统来解决，锁有两种类型。  共享锁（读锁），多个客户在同一时刻可以同时读取同一个资源。 排他锁（写锁），会阻塞其他的写锁和读锁。&amp;nbsp;    锁粒度  表锁  会锁定整张表，阻塞其他用户对该表的所有读和写操作。   行锁&amp;nbsp;   事务  原子性 一致性 隔离性 持久性">
+<meta property="og:updated_time" content="2018-01-26T02:21:48.944Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="高性能MySQL学习笔记1.3-并发控制">
+<meta name="twitter:description" content="&amp;nbsp; 并发控制  只要有多个查询需要在同一时刻修改数据，就会产生并发控制的问题。 在处理并发读或写时可以用锁系统来解决，锁有两种类型。  共享锁（读锁），多个客户在同一时刻可以同时读取同一个资源。 排他锁（写锁），会阻塞其他的写锁和读锁。&amp;nbsp;    锁粒度  表锁  会锁定整张表，阻塞其他用户对该表的所有读和写操作。   行锁&amp;nbsp;   事务  原子性 一致性 隔离性 持久性">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-e9-ab-98-e6-80-a7-e8-83-bdmysql-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e5-b9-b6-e5-8f-91-e6-8e-a7-e5-88-b6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/23/e9-ab-98-e6-80-a7-e8-83-bdmysql-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e5-b9-b6-e5-8f-91-e6-8e-a7-e5-88-b6/" class="article-date">
+  <time datetime="2017-11-23T11:44:56.000Z" itemprop="datePublished">2017-11-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/MySQL/">MySQL</a>►<a class="article-category-link" href="/categories/MySQL/学习/">学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      高性能MySQL学习笔记1.3-并发控制
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;</p>
+<p>并发控制</p>
+<ul>
+<li>只要有多个查询需要在同一时刻修改数据，就会产生并发控制的问题。</li>
+<li><p>在处理并发读或写时可以用锁系统来解决，锁有两种类型。</p>
+<ul>
+<li>共享锁（读锁），多个客户在同一时刻可以同时读取同一个资源。</li>
+<li>排他锁（写锁），会阻塞其他的写锁和读锁。<br>&nbsp;</li>
+</ul>
+</li>
+</ul>
+<p>锁粒度</p>
+<ul>
+<li><p>表锁</p>
+<ul>
+<li>会锁定整张表，阻塞其他用户对该表的所有读和写操作。</li>
+</ul>
+</li>
+<li><p>行锁<br>&nbsp;</p>
+</li>
+</ul>
+<p>事务</p>
+<ul>
+<li>原子性</li>
+<li>一致性</li>
+<li>隔离性</li>
+<li><p>持久性<br>隔离级别</p>
+</li>
+<li><p>READ UNCOMMITTED(未提交读)</p>
+<ul>
+<li>事务中的修改即使没有提交，对其他事务也都是可见的。脏读。</li>
+</ul>
+</li>
+<li><p>READ COMMITTED(提交读)</p>
+<ul>
+<li>一个事务从开始直到提交之前，所做的任何修改对其他事务都是不可见的。不可重复读。</li>
+</ul>
+</li>
+<li><p>REPEATABLE READ(可重复读)</p>
+<ul>
+<li>当某个事务在读取某个范围内的记录时，另外一个事务又在该范围内插入了新的记录，当之前的事务再次读取该范围内的记录时，会产生幻行。</li>
+<li>是MySQL默认事务隔离级别</li>
+</ul>
+</li>
+<li><p>SERIALIZABLE(可串行化)</p>
+<ul>
+<li>最高的隔离级别</li>
+<li>强制事务串行执行，避免幻读</li>
+<li>在读取的每一行数据上都加锁<br>&nbsp;</li>
+</ul>
+</li>
+</ul>
+<p>死锁</p>
+<ul>
+<li>两个或多个事务在同一资源上相互占用，并请求锁定对方占用的资源，从而导致恶性循环的现象。<br>&nbsp;</li>
+</ul>
+<p>MySQL中的事务</p>
+<ul>
+<li><p>自动提交</p>
+<ul>
+<li>如果不是显式地开始一个事务，则每个查询都被当作一个事务执行提交操作。<br>&nbsp;</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/23/e9-ab-98-e6-80-a7-e8-83-bdmysql-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e5-b9-b6-e5-8f-91-e6-8e-a7-e5-88-b6/" data-id="cjcvaxl830004quxyw3rimh2b" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/23/e9-ab-98-e6-80-a7-e8-83-bdmysql-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b01-4-e5-a4-9a-e7-89-88-e6-9c-ac-e5-b9-b6-e5-8f-91-e6-8e-a7-e5-88-b6mvcc/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nuevo</strong>
+      <div class="article-nav-title">
+        
+          高性能MySQL学习笔记1.4-多版本并发控制(MVCC)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/23/springboot-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e4-b8-80-e6-9e-84-e5-bb-ba-e7-ac-ac-e4-b8-80-e4-b8-aaspringboot-e7-a8-8b-e5-ba-8f/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">SpringBoot学习笔记(一):构建第一个SpringBoot程序</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorías</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nube de Tags</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MySQL/" style="font-size: 20px;">MySQL</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivos</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Posts recientes</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/25/python-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e7-94-9f-e6-88-90-e5-99-a8-trashed/">Python学习笔记-生成器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/28/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-aop/">Spring揭密学习笔记-AOP</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/27/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b04-spring-e7-9a-84ioc-e5-ae-b9-e5-99-a8-e4-b9-8bbeanfactory/">Spring揭密-学习笔记4-Spring的IoC容器之BeanFactory</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/27/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b02-ioc-service-provider/">Spring揭密-学习笔记2-IoC Service Provider</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

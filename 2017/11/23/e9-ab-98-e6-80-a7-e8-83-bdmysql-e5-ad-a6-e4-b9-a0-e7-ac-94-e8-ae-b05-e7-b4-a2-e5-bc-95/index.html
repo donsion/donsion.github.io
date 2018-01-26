@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>高性能MySQL学习笔记5-索引 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="B-Tree  顺序存储，适合查找范围数据。 不需要进行全表扫描，而是从索引的根节点开始进行搜索，根节点的槽中存放了指向子节点的指针，存储引擎根据这些指针向下层查找。 适用于全值键、键值范围或键前缀查找。其中键前缀查找只适用于最左前缀的查找。如果不是按照索引的最左列开始查找，则无法使用索引。 不能跳过索引用的列。 如果查询中有某个列的范围查询，则其右边所有列都无法使用索引优化查找。哈希索引  基于">
+<meta name="keywords" content="MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高性能MySQL学习笔记5-索引">
+<meta property="og:url" content="http://yoursite.com/2017/11/23/e9-ab-98-e6-80-a7-e8-83-bdmysql-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b05-e7-b4-a2-e5-bc-95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="B-Tree  顺序存储，适合查找范围数据。 不需要进行全表扫描，而是从索引的根节点开始进行搜索，根节点的槽中存放了指向子节点的指针，存储引擎根据这些指针向下层查找。 适用于全值键、键值范围或键前缀查找。其中键前缀查找只适用于最左前缀的查找。如果不是按照索引的最左列开始查找，则无法使用索引。 不能跳过索引用的列。 如果查询中有某个列的范围查询，则其右边所有列都无法使用索引优化查找。哈希索引  基于">
+<meta property="og:image" content="http://blog.donsion.cn/wp-content/uploads/2017/11/Snip20171124_10-300x30.png">
+<meta property="og:image" content="http://blog.donsion.cn/wp-content/uploads/2017/11/Snip20171124_11-300x27.png">
+<meta property="og:updated_time" content="2018-01-26T02:21:48.945Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="高性能MySQL学习笔记5-索引">
+<meta name="twitter:description" content="B-Tree  顺序存储，适合查找范围数据。 不需要进行全表扫描，而是从索引的根节点开始进行搜索，根节点的槽中存放了指向子节点的指针，存储引擎根据这些指针向下层查找。 适用于全值键、键值范围或键前缀查找。其中键前缀查找只适用于最左前缀的查找。如果不是按照索引的最左列开始查找，则无法使用索引。 不能跳过索引用的列。 如果查询中有某个列的范围查询，则其右边所有列都无法使用索引优化查找。哈希索引  基于">
+<meta name="twitter:image" content="http://blog.donsion.cn/wp-content/uploads/2017/11/Snip20171124_10-300x30.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-e9-ab-98-e6-80-a7-e8-83-bdmysql-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b05-e7-b4-a2-e5-bc-95" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/23/e9-ab-98-e6-80-a7-e8-83-bdmysql-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b05-e7-b4-a2-e5-bc-95/" class="article-date">
+  <time datetime="2017-11-23T13:46:57.000Z" itemprop="datePublished">2017-11-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/MySQL/">MySQL</a>►<a class="article-category-link" href="/categories/MySQL/学习/">学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      高性能MySQL学习笔记5-索引
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>B-Tree</p>
+<ul>
+<li>顺序存储，适合查找范围数据。</li>
+<li>不需要进行全表扫描，而是从索引的根节点开始进行搜索，根节点的槽中存放了指向子节点的指针，存储引擎根据这些指针向下层查找。</li>
+<li>适用于全值键、键值范围或键前缀查找。其中键前缀查找只适用于最左前缀的查找。如果不是按照索引的最左列开始查找，则无法使用索引。</li>
+<li>不能跳过索引用的列。</li>
+<li><p>如果查询中有某个列的范围查询，则其右边所有列都无法使用索引优化查找。<br>哈希索引</p>
+</li>
+<li><p>基于哈希表实现，只有精确匹配索引所有列的查询才有效。</p>
+</li>
+<li>对于每一行数据，存储引擎都会对所有的索引列计算出一个哈希码，哈希索引将所有的哈希码存储在索引中，同时在哈希表中保存指向每个数据行的指针。如果多个列的哈希值相同，索引会以链表的方式存放多个记录指针到同一个哈希条目中。</li>
+<li>哈希索引只包含哈希值和行指针，而不存储字段，所以不能用索引中的值来避免读取行。</li>
+<li>哈希索引数据不是按照索引值顺序存储的，无法用于排序。</li>
+<li>哈希索引不支持部分索引列匹配查找。</li>
+<li>哈希索引只支持等值比较查询。</li>
+<li>访问哈希索引的数据非常快。</li>
+<li>会出现哈希冲突的问题。<br>&nbsp;</li>
+</ul>
+<p>R-Tree(空间数据索引)</p>
+<p>&nbsp;</p>
+<p>全文索引</p>
+<p>&nbsp;</p>
+<p>索引优点</p>
+<ol>
+<li>大大减少了服务器需要扫描的数据量</li>
+<li>帮助服务器避免排序和临时表</li>
+<li>将随机IO变为顺序IO<br>&nbsp;</li>
+</ol>
+<p>例子：</p>
+<p><pre class="lang:default decode:true">CREATE TABLE <code>punch_day</code> (<br>  <code>Id</code> int(10) unsigned NOT NULL AUTO_INCREMENT,<br>  <code>UserId</code> int(10) unsigned NOT NULL,<br>  <code>PunchId</code> int(10) unsigned NOT NULL,<br>  <code>PunchType</code> int(10) unsigned NOT NULL,<br>  <code>ObjectId</code> int(10) unsigned NOT NULL,<br>  <code>Status</code> tinyint(3) unsigned NOT NULL DEFAULT ‘1’ COMMENT ‘1正常；0删除；2补卡；’,<br>  <code>CreateTime</code> datetime NOT NULL DEFAULT ‘2017-08-15 00:00:00’,<br>  <code>UpdateTime</code> datetime NOT NULL DEFAULT ‘2017-08-15 00:00:00’,<br>  PRIMARY KEY (<code>Id</code>),<br>  UNIQUE KEY <code>UQ_UserId_PunchId_PunchType_ObjectId</code> (<code>UserId</code>,<code>PunchId</code>,<code>PunchType</code>,<code>ObjectId</code>) USING BTREE<br>) ENGINE=InnoDB AUTO_INCREMENT=7230586 DEFAULT CHARSET=utf8 COMMENT=’记录打卡常用’</pre><br>比如有这样一个表，索引顺序<code>UserId</code>,<code>PunchId</code>,<code>PunchType</code>,<code>ObjectId</code></p>
+<p><pre class="lang:default decode:true">select * from punch_day where UserId = 102597673 and punchId = 9 and objectId = 14 and punchType = 4<br></pre><br>可以看到查询计划能够精准查询</p>
+<p><img src="http://blog.donsion.cn/wp-content/uploads/2017/11/Snip20171124_10-300x30.png" alt=""></p>
+<p>&nbsp;</p>
+<p>但是，如果将punchId去掉</p>
+<p><pre class="lang:default decode:true ">select * from punch_day where UserId = 102597673  and objectId = 14 and punchType = 4</pre><br><img src="http://blog.donsion.cn/wp-content/uploads/2017/11/Snip20171124_11-300x27.png" alt=""></p>
+<p>只走了UserId的索引</p>
+<p>&nbsp;</p>
+<p>由此可以发现，复合索引  如果where条件中没有中间某列，则导致后面的列索引使用不上</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>使用索引扫描来做排序</p>
+<ul>
+<li>当索引列的顺序和ORDER BY子句的顺序完全一致，并且所有列的排序方向都一样时。</li>
+<li><p>如果查询需要关联多张表，则只有当ORDER BY子句引用的字段全部为第一个表时才能能用索引做排序。需要满足索引的最左前缀要求。</p>
+<ul>
+<li>当前导列为常量时ORDER BY子句可以不满足索引的最左前缀的要求。<br>&nbsp;</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>冗余和重复索引</p>
+<ul>
+<li>如果创建了索引(A,B)，再创建索引(A)就是冗余索引，因为这只是前一个索引的前缀索引。(A,B)也可以当作(A)来使用。但创建索引(B,A)则不是冗余索引。<br>&nbsp;</li>
+</ul>
+<p>索引和锁</p>
+<ul>
+<li>索引可以让查询锁定更少的行。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/23/e9-ab-98-e6-80-a7-e8-83-bdmysql-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b05-e7-b4-a2-e5-bc-95/" data-id="cjcvaxl8b0009quxydlqc2td5" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/25/spring-in-action-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b01/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nuevo</strong>
+      <div class="article-nav-title">
+        
+          Spring揭密-学习笔记1-IOC的基本概念
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/23/e9-ab-98-e6-80-a7-e8-83-bdmysql-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b01-5-mysql-e7-9a-84-e5-ad-98-e5-82-a8-e5-bc-95-e6-93-8e/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">高性能MySQL学习笔记1.5-MySQL的存储引擎</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorías</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nube de Tags</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MySQL/" style="font-size: 20px;">MySQL</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivos</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Posts recientes</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/25/python-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e7-94-9f-e6-88-90-e5-99-a8-trashed/">Python学习笔记-生成器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/28/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-aop/">Spring揭密学习笔记-AOP</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/27/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b04-spring-e7-9a-84ioc-e5-ae-b9-e5-99-a8-e4-b9-8bbeanfactory/">Spring揭密-学习笔记4-Spring的IoC容器之BeanFactory</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/27/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b02-ioc-service-provider/">Spring揭密-学习笔记2-IoC Service Provider</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

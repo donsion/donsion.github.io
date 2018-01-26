@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>SpringBoot学习笔记(一):构建第一个SpringBoot程序 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="简介：Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。通过这种方式，Spring Boot致力于在蓬勃发展的快速应用开发领域(rapid application development)成为领导者。 特点： 1. 创建独立的Spring应用程序 2.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot学习笔记(一):构建第一个SpringBoot程序">
+<meta property="og:url" content="http://yoursite.com/2017/11/23/springboot-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e4-b8-80-e6-9e-84-e5-bb-ba-e7-ac-ac-e4-b8-80-e4-b8-aaspringboot-e7-a8-8b-e5-ba-8f/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="简介：Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。通过这种方式，Spring Boot致力于在蓬勃发展的快速应用开发领域(rapid application development)成为领导者。 特点： 1. 创建独立的Spring应用程序 2.">
+<meta property="og:updated_time" content="2018-01-26T02:21:48.944Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SpringBoot学习笔记(一):构建第一个SpringBoot程序">
+<meta name="twitter:description" content="简介：Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。通过这种方式，Spring Boot致力于在蓬勃发展的快速应用开发领域(rapid application development)成为领导者。 特点： 1. 创建独立的Spring应用程序 2.">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-springboot-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e4-b8-80-e6-9e-84-e5-bb-ba-e7-ac-ac-e4-b8-80-e4-b8-aaspringboot-e7-a8-8b-e5-ba-8f" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/23/springboot-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e4-b8-80-e6-9e-84-e5-bb-ba-e7-ac-ac-e4-b8-80-e4-b8-aaspringboot-e7-a8-8b-e5-ba-8f/" class="article-date">
+  <time datetime="2017-11-22T17:22:30.000Z" itemprop="datePublished">2017-11-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/SpringBoot/">SpringBoot</a>►<a class="article-category-link" href="/categories/SpringBoot/学习/">学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SpringBoot学习笔记(一):构建第一个SpringBoot程序
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>简介：Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。通过这种方式，Spring Boot致力于在蓬勃发展的快速应用开发领域(rapid application development)成为领导者。</p>
+<p>特点：</p>
+<p><div class="para" style="padding-left: 30px;">1. 创建独立的Spring应用程序</div></p>
+<p><div class="para" style="padding-left: 30px;">2. 嵌入的Tomcat，无需部署WAR文件</div></p>
+<p><div class="para" style="padding-left: 30px;">3. 简化Maven配置</div></p>
+<p><div class="para" style="padding-left: 30px;">4. 自动配置Spring</div></p>
+<p><div class="para" style="padding-left: 30px;">5. 提供生产就绪型功能，如指标，健康检查和外部配置</div></p>
+<p><div class="para" style="padding-left: 30px;">6. 绝对没有代码生成和对XML没有要求配置</div></p>
+<p><div></div></p>
+<p><div>构建工程：</div></p>
+<p><div>    工具:IntelliJ Idea</div></p>
+<p><div>    步骤:File-&gt;new -&gt;Project-&gt;Spring Initializr-&gt;next 填入Group Id 和Artifact-&gt;next 选中web -&gt;finish</div></p>
+<p><div>    项目结构:</div></p>
+<p><div></div></p>
+<pre class="lang:default decode:true" style="padding-left: 90px;">- src
+    -main
+        -java
+            -package
+                -SpringbootApplication
+        -resouces
+            - statics
+            - templates
+            - application.properties
+    -test
+- pom</pre>
+
+<p>备注:</p>
+<p>pom文件为基本的依赖管理文件</p>
+<p>resouces 资源文件</p>
+<p>statics 静态资源</p>
+<p>templates 模板资源</p>
+<p>application.yml 配置文件</p>
+<ul>
+<li>SpringbootApplication程序的入口。<br><br>&nbsp;</li>
+</ul>
+<p>POM文件的依赖</p>
+<p><pre class="lang:default decode:true ">&lt;?xml version=”1.0” encoding=”UTF-8”?&gt;<br>&lt;project xmlns=”<a href="http://maven.apache.org/POM/4.0.0" target="_blank" rel="noopener">http://maven.apache.org/POM/4.0.0</a>“ xmlns:xsi=”<a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="noopener">http://www.w3.org/2001/XMLSchema-instance</a>“<br>    xsi:schemaLocation=”<a href="http://maven.apache.org/POM/4.0.0" target="_blank" rel="noopener">http://maven.apache.org/POM/4.0.0</a> <a href="http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&amp;gt" target="_blank" rel="noopener">http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&amp;gt</a>;<br>    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</pre></p>
+<pre><code>&amp;lt;groupId&amp;gt;cn.donsion.springboot&amp;lt;/groupId&amp;gt;
+&amp;lt;artifactId&amp;gt;demo&amp;lt;/artifactId&amp;gt;
+&amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt;
+&amp;lt;packaging&amp;gt;jar&amp;lt;/packaging&amp;gt;
+
+&amp;lt;name&amp;gt;demo&amp;lt;/name&amp;gt;
+&amp;lt;description&amp;gt;Demo project for Spring Boot&amp;lt;/description&amp;gt;
+
+&amp;lt;parent&amp;gt;
+    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;1.5.8.RELEASE&amp;lt;/version&amp;gt;
+    &amp;lt;relativePath/&amp;gt; &amp;lt;!-- lookup parent from repository --&amp;gt;
+&amp;lt;/parent&amp;gt;
+
+&amp;lt;properties&amp;gt;
+    &amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncoding&amp;gt;
+    &amp;lt;project.reporting.outputEncoding&amp;gt;UTF-8&amp;lt;/project.reporting.outputEncoding&amp;gt;
+    &amp;lt;java.version&amp;gt;1.8&amp;lt;/java.version&amp;gt;
+&amp;lt;/properties&amp;gt;
+
+&amp;lt;dependencies&amp;gt;
+    &amp;lt;dependency&amp;gt;
+        &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+        &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt;
+    &amp;lt;/dependency&amp;gt;
+
+    &amp;lt;dependency&amp;gt;
+        &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+        &amp;lt;artifactId&amp;gt;spring-boot-starter-test&amp;lt;/artifactId&amp;gt;
+        &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt;
+    &amp;lt;/dependency&amp;gt;
+
+&amp;lt;/dependencies&amp;gt;
+
+&amp;lt;build&amp;gt;
+    &amp;lt;plugins&amp;gt;
+        &amp;lt;plugin&amp;gt;
+            &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;spring-boot-maven-plugin&amp;lt;/artifactId&amp;gt;
+        &amp;lt;/plugin&amp;gt;
+    &amp;lt;/plugins&amp;gt;
+&amp;lt;/build&amp;gt;
+</code></pre><p>&lt;/project&gt;<br><br>&nbsp;</p>
+<p>建立Controller</p>
+<p><pre class="lang:java decode:true">package cn.donsion.springboot.demo.controller;</pre></p>
+<p>import org.springframework.web.bind.annotation.RequestMapping;<br>import org.springframework.web.bind.annotation.RestController;</p>
+<p>/**</p>
+<ul>
+<li>@author dongxian</li>
+<li><p>@create 2017-11-22 17:47<br>**/<br>@RestController<br>public class HelloController {</p>
+<p> @RequestMapping(“/“)<br> public String index(){</p>
+<pre><code>return &quot;Greetings from Spring Boot!&quot;;
+</code></pre><p> }<br>}<br><br>&nbsp;</p>
+</li>
+</ul>
+<p>启动SpringbootFirstApplication的main方法，打开浏览器localhost:8080,浏览器显示：</p>
+<p>Greetings from Spring Boot!</p>
+<p>&nbsp;</p>
+<h4 id="神奇之处："><a href="#神奇之处：" class="headerlink" title="神奇之处："></a>神奇之处：</h4><ul>
+<li>你没有做任何的web.xml配置。</li>
+<li>你没有做任何的sping mvc的配置; springboot为你做了。</li>
+<li>你没有配置tomcat ;springboot内嵌tomcat.<br>&nbsp;</li>
+</ul>
+<h4 id="启动springboot-方式"><a href="#启动springboot-方式" class="headerlink" title="启动springboot 方式"></a>启动springboot 方式</h4><p>cd到项目主目录,mvn clean然后mvn package将项目打包</p>
+<p><pre class="lang:default decode:true">drwxr-xr-x  11 dongxian  staff   352B Nov 22 20:20 ./<br>drwxr-xr-x   9 dongxian  staff   288B Nov 21 12:32 ../<br>-rw-r–r–   1 dongxian  staff   249B Nov 21 12:32 .gitignore<br>drwxr-xr-x  11 dongxian  staff   352B Nov 23 00:23 .idea/<br>drwxr-xr-x   3 dongxian  staff    96B Nov 21 12:32 .mvn/<br>-rw-r–r–   1 dongxian  staff   6.3K Nov 22 20:20 SpringBootDemo.iml<br>-rwxr-xr-x   1 dongxian  staff   6.3K Nov 21 12:32 mvnw*<br>-rw-r–r–   1 dongxian  staff   4.9K Nov 21 12:32 mvnw.cmd<br>-rw-r–r–   1 dongxian  staff   1.6K Nov 22 20:20 pom.xml<br>drwxr-xr-x   4 dongxian  staff   128B Nov 21 12:32 src/<br>drwxr-xr-x  11 dongxian  staff   352B Nov 22 19:41 target/<br>dongxian@Donsions-MacBook:~/Documents/workspace/SpringBootDemo$ mvn clean<br>dongxian@Donsions-MacBook:~/Documents/workspace/SpringBootDemo$ mvn package<br></pre><br>cd到target目录</p>
+<p><pre class="lang:default decode:true">dongxian@Donsions-MacBook:~/Documents/workspace/SpringBootDemo/target$ <span style="color: #ff0000;">java -jar demo-0.0.1-SNAPSHOT.jar<br></span></pre><br>&nbsp;</p>
+<p>浏览器访问</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/23/springboot-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e4-b8-80-e6-9e-84-e5-bb-ba-e7-ac-ac-e4-b8-80-e4-b8-aaspringboot-e7-a8-8b-e5-ba-8f/" data-id="cjcvaxl980017quxydy0xuau8" class="article-share-link">Compartir</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/23/e9-ab-98-e6-80-a7-e8-83-bdmysql-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e5-b9-b6-e5-8f-91-e6-8e-a7-e5-88-b6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nuevo</strong>
+      <div class="article-nav-title">
+        
+          高性能MySQL学习笔记1.3-并发控制
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/22/spring-boot-e5-b9-b2-e8-b4-a7-e7-b3-bb-e5-88-97-ef-bc-9a-e9-85-8d-e7-bd-ae-e6-96-87-e4-bb-b6-e8-a7-a3-e6-9e-90/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">Spring Boot干货系列：配置文件解析</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorías</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/学习/">学习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nube de Tags</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MySQL/" style="font-size: 20px;">MySQL</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivos</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Posts recientes</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/25/python-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e7-94-9f-e6-88-90-e5-99-a8-trashed/">Python学习笔记-生成器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/28/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-aop/">Spring揭密学习笔记-AOP</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/27/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b04-spring-e7-9a-84ioc-e5-ae-b9-e5-99-a8-e4-b9-8bbeanfactory/">Spring揭密-学习笔记4-Spring的IoC容器之BeanFactory</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/27/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b02-ioc-service-provider/">Spring揭密-学习笔记2-IoC Service Provider</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
