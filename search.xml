@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[now post]]></title>
+      <url>/2018/01/26/now-post/</url>
+      <content type="html"></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>/2018/01/26/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Python学习笔记-生成器]]></title>
+      <url>/2017/12/25/python-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e7-94-9f-e6-88-90-e5-99-a8-trashed/</url>
+      <content type="html"><![CDATA[<p>生成器的概念</p>
+<p>generator，生成器。使列表元素可以按照某种算法推算出来，这样就不必创建完整的list，从⽽节省⼤量的空间</p>
+<p>&nbsp;</p>
+<p>创建生成器</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 未分类 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Spring揭密学习笔记-AOP]]></title>
+      <url>/2017/11/28/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-aop/</url>
+      <content type="html"><![CDATA[<p>AOP全称Aspect-Oriented Programming，面向切面编程。使用AOP可以对类似于Logging和Security等系统需求进行模块化的组织，简化系统需求与实现之间的对比关系，进而使得整个系统的实现更具模块化。AOP是对OOP方法的一种补足。</p>
+<p>&nbsp;</p>
+<p>Java平台上AOP实现机制</p>
+<ul>
+<li><p>动态代理</p>
+<ul>
+<li>JDK1.3后，引入了动态代理机制，可以在运行期间为相应的接口动态生成对应的代理对象。所以我们可以将横切关注点逻辑封装到动态代理中然后在系统运行期间根据横切关注点需要织入的模块位置，将横切逻辑织入到相应的代理类中。</li>
+</ul>
+</li>
+<li><p>动态字节码增强</p>
+</li>
+<li>Java代码生成</li>
+<li>自定义类加载器</li>
+<li>AOL扩展</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Spring </category>
+            
+            <category> 学习 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> spring </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Spring揭密-学习笔记4-Spring的IoC容器之BeanFactory]]></title>
+      <url>/2017/11/27/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b04-spring-e7-9a-84ioc-e5-ae-b9-e5-99-a8-e4-b9-8bbeanfactory/</url>
+      <content type="html"><![CDATA[<p>Spring的IoC容器是一个IoC Service Provider，同时是一个提供IoC支持的轻量级容器，除了基本的IoC支持，它作为轻量级容器还提供了IoC之外的支持。如在Spring的IoC容器之上，Spring还提供了 相应的AOP框架支持、企业级服务集成等服务。</p>
+<p>Spring两种容器类型：</p>
+<ul>
+<li>BeanFactory。基础类型IoC容器，提供完整的IoC服务支持。如果没有特殊指定，默认采用延 迟初始化策略（lazy-load）。只有当客户端对象需要访问容器中的某个受管对象的时候，才对 该受管对象进行初始化以及依赖注入操作。所以，相对来说，容器启动初期速度较快，所需要的资源有限。对于资源有限，并且功能要求不是很严格的场景， BeanFactory 是比较合适的 IoC容器选择。</li>
+<li>ApplicationContext。ApplicationContext 在 BeanFactory 的基础上构建，是相对比较高 级的容器实现，除了拥有 BeanFactory 的所有支持， ApplicationContext 还提供了其他高级特性，比如事件发布、国际化信息支持等。ApplicationContext 所管理 的对象，在该类型容器启动之后，默认全部初始化并绑定完成。所以，相对于 BeanFactory 来 说， ApplicationContext 要求更多的系统资源，同时，因为在启动时就完成所有初始化，容 器启动时间较之 BeanFactory 也会长一些。在那些系统资源充足，并且要求更多功能的场景中， ApplicationContext 类型的容器是比较合适的选择。<br>&nbsp;</li>
+</ul>
+<p>在BeanFactory出现之前，我们通常会直接在应用程序的入口类的main方法中， 自己实例化相应的对象并调用之，如以下代码所示：</p>
+<p><pre class="lang:default decode:true ">FXNewsProvider newsProvider = new FXNewsProvider();<br> newsProvider.getAndPersistNews();</pre><br>不过， 现在既然有了 BeanFactory ， 我们通常只需将“生产线图纸”交给 BeanFactory ， 让 BeanFactory为我们生产一个FXNewsProvider，如以下代码所示：</p>
+<p><pre class="lang:default decode:true ">BeanFactory container = ➥ new XmlBeanFactory(new ClassPathResource(“配置文件路径”));<br> FXNewsProvider newsProvider = (FXNewsProvider)container.getBean(“djNewsProvider”);<br>newsProvider.getAndPersistNews();</pre><br>或者如以下代码所示：</p>
+<p><pre class="lang:default decode:true ">ApplicationContext container = ➥ new ClassPathXmlApplicationContext(“配置文件路径”);<br>FXNewsProvider newsProvider = (FXNewsProvider)container.getBean(“djNewsProvider”);<br>newsProvider.getAndPersistNews();</pre><br>亦或如以下代码所示：</p>
+<p><pre class="lang:default decode:true ">ApplicationContext container = ➥new FileSystemXmlApplicationContext(“配置文件路径”);<br>FXNewsProvider newsProvider = (FXNewsProvider)container.getBean(“djNewsProvider”);<br> newsProvider.getAndPersistNews();</pre><br>&nbsp;</p>
+<p>BeanFactory的XML之旅</p>
+<ol>
+<li><p>&lt;beans&gt;，是XML配置文件中最顶层的元素， 它下面可以包含0或者1个 &lt;description&gt; 和多个 &lt;bean&gt;以及&lt;import&gt;或者&lt;alias&gt;，&lt;beans&gt;作为所有&lt;bean&gt;的“统帅”，它拥有相应的属性（attribute）对所辖的&lt;bean&gt;进行统一 的默认行为设置，包括如下几个。</p>
+<ol>
+<li>default-lazy-init 。其值可以指定为 true 或者 false ，默认值为 false 。用来标志是否对所 有的 &lt;bean&gt; 进行延迟初始化。</li>
+<li>default-autowire 。可以取值为 no 、 byName 、 byType 、 constructor 以及 autodetect 。默 认值为 no ，如果使用自动绑定的话，用来标志全体bean使用哪一种默认绑定方式。</li>
+<li>default-dependency-check 。可以取值 none 、 objects 、 simple 以及 all ，默认值为 none ， 即不做依赖检查。</li>
+<li>default-init-method 。如果所管辖的 &lt;bean&gt; 按照某种规则，都有同样名称的初始化方法的 话，可以在这里统一指定这个初始化方法名，而不用在每一个 &lt;bean&gt; 上都重复单独指定。</li>
+<li>default-destroy-method 。与 default-init-method 相对应，如果所管辖的bean有按照某种 规则使用了相同名称的对象销毁方法，可以通过这个属性统一指定。</li>
+</ol>
+</li>
+<li><p>&lt;description&gt; 可以通过&lt;description&gt;在配置的文件中指定一些描述性的信息。通常情况下，该元素是省略的。</p>
+</li>
+<li>通常情况下，可以根据模块功能或者层次关系，将配置信息分门别类地放到多个配置文件中。在 想加载主要配置文件，并将主要配置文件所依赖的配置文件同时加载时，可以在这个主要的配置文件 中通过 &lt;import&gt;元素对其所依赖的配置文件进行引用</li>
+<li>可以通过&lt;alias&gt;为某些&lt;bean&gt;起一些“外号”（别名），通常情况下是为了减少输入。比如， 假设有个&lt;bean&gt;，它的名称为dataSourceForMasterDatabase，你可以为其添加一个&lt;alias&gt;，像 这样 &lt;alias name=”dataSourceForMasterDatabase” alias=”masterDataSource”/&gt;。 以后通过 dataSourceForMasterDatabase或者masterDataSource来引用这个&lt;bean&gt;都可以。<br>&nbsp;</li>
+</ol>
+<p>孤孤单单一个Bean</p>
+<ul>
+<li>id属性，每个注册到容器的对象都需要一个唯一标志，通过id属性来指定当前注册对 象的beanName是什么。内部&lt;bean&gt;以及不需要根据 beanName明确依赖关系的场合可以省略，除了可以使用 id 来指定 &lt;bean&gt; 在容器中的标志， 还可以使用 name 属性来指定 &lt;bean&gt; 的别名。</li>
+<li>class属性  每个注册到容器的对象都需要通过&lt;bean&gt;元素的class属性指定其类型，否则，容器可不知道这 个对象到底是何方神圣。在大部分情况下，该属性是必须的。<br>&nbsp;</li>
+</ul>
+<p>构造方法注入的XML之道</p>
+<ul>
+<li>按照Spring的IoC容器配置格式，要通过构造方法注入方式，为当前业务对象注入其所依赖的对象， 需要使用&lt;constructor-arg&gt;。<br><pre class="lang:default decode:true ">&lt;bean id=”djNewsProvider” class=”..FXNewsProvider”&gt;<br> &lt;constructor-arg&gt; <pre><code>&amp;lt;ref bean=&quot;djNewsListener&quot;/&amp;gt;
+</code></pre> &lt;/constructor-arg&gt;<br>&lt;constructor-arg&gt; <pre><code>&amp;lt;ref bean=&quot;djNewsPersister&quot;/&amp;gt; 
+</code></pre>&lt;/constructor-arg&gt;<br>&lt;/bean&gt;</pre><br>通过这个元素来指明容器将为 djNewsProvider这个&lt;bean&gt;注入通过&lt;ref&gt;所引用的Bean实例，也可以写成<br><pre class="lang:default decode:true ">&lt;bean id=”djNewsProvider” class=”..FXNewsProvider”&gt;<br> &lt;constructor-arg ref=”djNewsListener”/&gt;<br>&lt;constructor-arg ref=”djNewsPersister”/&gt;<br>&lt;/bean&gt;</pre><br>有时候，容器在加载XML配置无法明确配置项与对象的构造方法参数 列表的一一对应关系，就需要请&lt;constructor-arg&gt;的type或者index属性。比如，对象存在多个构造方法，当参数列表数目相同而类型不同的时候，容器无法区分应该使用哪个构造方法来实例化 对象，或者构造方法可能同时传入最少两个类型相同的对象。<br>&nbsp;</li>
+</ul>
+<p>setter方法注入的XML之道</p>
+<ul>
+<li>与构造方法注入可以使用 &lt;constructor-arg&gt;注入配置相对应， Spring为setter方法注入提供了 &lt;property&gt;元素。&lt;property&gt;有一个name属性（attribute），用来指定该&lt;property&gt;将会注入的对象所对应的实例 变量名称。之后通过value或者ref属性或者内嵌的其他元素来指定具体的依赖对象引用或者值，如以</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Spring </category>
+            
+            <category> 学习 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Spring揭密-学习笔记2-IoC Service Provider]]></title>
+      <url>/2017/11/27/spring-e6-8f-ad-e5-af-86-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b02-ioc-service-provider/</url>
+      <content type="html"><![CDATA[<p>IoC Service Provider 的职责</p>
+<ul>
+<li>业务对象的构建管理。在IoC场景中，业务对象无需关心所依赖的对象如何构建如何取得，但 这部分工作始终需要有人来做。所以， IoC Service Provider需要将对象的构建逻辑从客户端对象那里剥离出来，以免这部分逻辑污染业务对象的实现。</li>
+<li>业务对象间的依赖绑定。对于IoC Service Provider来说， 这个职责是最艰巨也是最重要的，这 是它的最终使命之所在。如果不能完成这个职责，那么，无论业务对象如何的“呼喊”，也不 会得到依赖对象的任何响应（最常见的倒是会收到一个 NullPointerException ）。 IoC Service Provider通过结合之前构建和管理的所有业务对象， 以及各个业务对象间可以识别的依赖关系，将这些对象所依赖的对象注入绑定，从而保证每个业务对象在使用的时候，可以处于就绪状 态。<br>&nbsp;</li>
+</ul>
+<p>IoC Service Provider 如何管理对象间的 依赖关系</p>
+<ul>
+<li><p>直接编码方式</p>
+<ul>
+<li>在容 器启动之前，我们就可以通过程序编码的方式将被注入对象和依赖对象注册到容器中，并明确它们相 互之间的依赖注入关系。通过为相应的类指定对应的具体实例，可以告知IoC容器，当我们要这种类型的对象实例时，请将容器中注册的、对应的那个具体实例返回给我们。</li>
+</ul>
+</li>
+<li><p>配置文件方式</p>
+<ul>
+<li>像普通文本文件、properties文件、XML文件等，都 可以成为管理依赖注入关系的载体。不过，最为常见的，还是通过XML文件来管理对象注册和对象间 依赖关系，比如Spring IoC容器和在PicoContainer基础上扩展的NanoContainer，都是采用XML文件来 管理和保存依赖注入信息的。</li>
+</ul>
+</li>
+<li><p>元数据方式</p>
+<ul>
+<li>可以直接在类中使用元数据信息来标注各个对象之间的依赖关系，然后由Guice框架根 据这些注解所提供的信息将这些对象组装后，交给客户端对象使用。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Spring </category>
+            
+            <category> 学习 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> spring </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Spring揭密-学习笔记1-IOC的基本概念]]></title>
+      <url>/2017/11/25/spring-in-action-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b01/</url>
+      <content type="html"><![CDATA[<p>IOC，全称 Inversion of Control，控制反转，也叫Dependency Injection，依赖注入。</p>
+<p>以往，如果我们依赖于某个类或者服务，最简单有效的方式就是直接在类的构造函数中新建相应的依赖类。但每次用到什么依赖对象都要主动地去获取，真的有必要吗？我们最终所要做的，其实就是直接调用依赖对象所提供的某项服务而已。</p>
+<p>IOC就是为了帮助我们避免上面的大费周折而提供了更加轻松简洁的方式 。所有的被注入对象都由IoC Service Provider统一管理，被注入对象需要什么直接跟Ioc Service Provider招呼一声，后者就会把相应的被依赖对象注入到被注入对象中，从而 达到IoC Service Provider为被注入对象服务的目的。从被注入对象的角度看，与之前直接寻求依赖对象相比，依赖对象的取得方式发生了反转， 控制也从被注入对象转到了IoC Service Provider那里。</p>
+<p>依赖注入的方式：</p>
+<ul>
+<li><p>构造方法注入</p>
+<ul>
+<li>被注入对象可以通过在某构造方法中声明依赖对象的参数列表，让外部知道它需要哪些依赖对象，IoC Service Provider会检查被注入对象的构造方法，取得它所需要的依赖对象列表，进而为其注 入相应的对象。同一个对象是不可能被构造两次的，因此，被注入对象的构造乃至其整个生命周期， 应该是由IoC Service Provider来管理的。</li>
+</ul>
+</li>
+<li><p>setter方法注入</p>
+<ul>
+<li>通过setter方法，可以更改相应的对象属性，通 过getter方法，可以获得相应属性的状态。所以，当前对象只要为其依赖对象所对应的属性添加setter 方法，就可以通过setter方法将相应的依赖对象设置到被注入对象中。</li>
+</ul>
+</li>
+<li><p>接口注入</p>
+<ul>
+<li>被注入对象如果想要IoC Service Provider为其注入依赖对象，就必须实现某个接口。这个接口提供一个方法，用来为其注入依赖对象。 IoC Service Provider最终通过这些接口来了解应该为被注入对象注入什么依赖对象。<br>&nbsp;</li>
+</ul>
+</li>
+</ul>
+<p>三种注入方式的比较</p>
+<ul>
+<li>接口注入。从注入方式的使用上来说，接口注入是现在不甚提倡的一种方式，基本处于“退 役状态”。因为它强制被注入对象实现不必要的接口，带有侵入性。而构造方法注入和setter 方法注入则不需要如此。</li>
+<li>构造方法注入。这种注入方式的优点就是，对象在构造完成之后，即已进入就绪状态，可以 马上使用。缺点就是，当依赖对象比较多的时候，构造方法的参数列表会比较长。而通过反 射构造对象的时候，对相同类型的参数的处理会比较困难，维护和使用上也比较麻烦。而且 在Java中，构造方法无法被继承，无法设置默认值。对于非必须的依赖处理，可能需要引入多 个构造方法，而参数数量的变动可能造成维护上的不便。</li>
+<li>setter方法注入。 因为方法可以命名，所以setter方法注入在描述性上要比构造方法注入好一些。 另外， setter方法可以被继承， 允许设置默认值，而且有良好的IDE支持。缺点当然就是对象无 法在构造完成后马上进入就绪状态。<br>&nbsp;</li>
+</ul>
+<p>&nbsp;</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Spring </category>
+            
+            <category> 学习 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[高性能MySQL学习笔记5-索引]]></title>
+      <url>/2017/11/23/e9-ab-98-e6-80-a7-e8-83-bdmysql-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b05-e7-b4-a2-e5-bc-95/</url>
+      <content type="html"><![CDATA[<p>B-Tree</p>
+<ul>
+<li>顺序存储，适合查找范围数据。</li>
+<li>不需要进行全表扫描，而是从索引的根节点开始进行搜索，根节点的槽中存放了指向子节点的指针，存储引擎根据这些指针向下层查找。</li>
+<li>适用于全值键、键值范围或键前缀查找。其中键前缀查找只适用于最左前缀的查找。如果不是按照索引的最左列开始查找，则无法使用索引。</li>
+<li>不能跳过索引用的列。</li>
+<li><p>如果查询中有某个列的范围查询，则其右边所有列都无法使用索引优化查找。<br>哈希索引</p>
+</li>
+<li><p>基于哈希表实现，只有精确匹配索引所有列的查询才有效。</p>
+</li>
+<li>对于每一行数据，存储引擎都会对所有的索引列计算出一个哈希码，哈希索引将所有的哈希码存储在索引中，同时在哈希表中保存指向每个数据行的指针。如果多个列的哈希值相同，索引会以链表的方式存放多个记录指针到同一个哈希条目中。</li>
+<li>哈希索引只包含哈希值和行指针，而不存储字段，所以不能用索引中的值来避免读取行。</li>
+<li>哈希索引数据不是按照索引值顺序存储的，无法用于排序。</li>
+<li>哈希索引不支持部分索引列匹配查找。</li>
+<li>哈希索引只支持等值比较查询。</li>
+<li>访问哈希索引的数据非常快。</li>
+<li>会出现哈希冲突的问题。<br>&nbsp;</li>
+</ul>
+<p>R-Tree(空间数据索引)</p>
+<p>&nbsp;</p>
+<p>全文索引</p>
+<p>&nbsp;</p>
+<p>索引优点</p>
+<ol>
+<li>大大减少了服务器需要扫描的数据量</li>
+<li>帮助服务器避免排序和临时表</li>
+<li>将随机IO变为顺序IO<br>&nbsp;</li>
+</ol>
+<p>例子：</p>
+<p><pre class="lang:default decode:true">CREATE TABLE <code>punch_day</code> (<br>  <code>Id</code> int(10) unsigned NOT NULL AUTO_INCREMENT,<br>  <code>UserId</code> int(10) unsigned NOT NULL,<br>  <code>PunchId</code> int(10) unsigned NOT NULL,<br>  <code>PunchType</code> int(10) unsigned NOT NULL,<br>  <code>ObjectId</code> int(10) unsigned NOT NULL,<br>  <code>Status</code> tinyint(3) unsigned NOT NULL DEFAULT ‘1’ COMMENT ‘1正常；0删除；2补卡；’,<br>  <code>CreateTime</code> datetime NOT NULL DEFAULT ‘2017-08-15 00:00:00’,<br>  <code>UpdateTime</code> datetime NOT NULL DEFAULT ‘2017-08-15 00:00:00’,<br>  PRIMARY KEY (<code>Id</code>),<br>  UNIQUE KEY <code>UQ_UserId_PunchId_PunchType_ObjectId</code> (<code>UserId</code>,<code>PunchId</code>,<code>PunchType</code>,<code>ObjectId</code>) USING BTREE<br>) ENGINE=InnoDB AUTO_INCREMENT=7230586 DEFAULT CHARSET=utf8 COMMENT=’记录打卡常用’</pre><br>比如有这样一个表，索引顺序<code>UserId</code>,<code>PunchId</code>,<code>PunchType</code>,<code>ObjectId</code></p>
+<p><pre class="lang:default decode:true">select * from punch_day where UserId = 102597673 and punchId = 9 and objectId = 14 and punchType = 4<br></pre><br>可以看到查询计划能够精准查询</p>
+<p><img src="http://blog.donsion.cn/wp-content/uploads/2017/11/Snip20171124_10-300x30.png" alt=""></p>
+<p>&nbsp;</p>
+<p>但是，如果将punchId去掉</p>
+<p><pre class="lang:default decode:true ">select * from punch_day where UserId = 102597673  and objectId = 14 and punchType = 4</pre><br><img src="http://blog.donsion.cn/wp-content/uploads/2017/11/Snip20171124_11-300x27.png" alt=""></p>
+<p>只走了UserId的索引</p>
+<p>&nbsp;</p>
+<p>由此可以发现，复合索引  如果where条件中没有中间某列，则导致后面的列索引使用不上</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>使用索引扫描来做排序</p>
+<ul>
+<li>当索引列的顺序和ORDER BY子句的顺序完全一致，并且所有列的排序方向都一样时。</li>
+<li><p>如果查询需要关联多张表，则只有当ORDER BY子句引用的字段全部为第一个表时才能能用索引做排序。需要满足索引的最左前缀要求。</p>
+<ul>
+<li>当前导列为常量时ORDER BY子句可以不满足索引的最左前缀的要求。<br>&nbsp;</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>冗余和重复索引</p>
+<ul>
+<li>如果创建了索引(A,B)，再创建索引(A)就是冗余索引，因为这只是前一个索引的前缀索引。(A,B)也可以当作(A)来使用。但创建索引(B,A)则不是冗余索引。<br>&nbsp;</li>
+</ul>
+<p>索引和锁</p>
+<ul>
+<li>索引可以让查询锁定更少的行。</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> MySQL </category>
+            
+            <category> 学习 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[高性能MySQL学习笔记1.5-MySQL的存储引擎]]></title>
+      <url>/2017/11/23/e9-ab-98-e6-80-a7-e8-83-bdmysql-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b01-5-mysql-e7-9a-84-e5-ad-98-e5-82-a8-e5-bc-95-e6-93-8e/</url>
+      <content type="html"><![CDATA[<p>InnoDB</p>
+<ul>
+<li>事务型存储引擎，并且支持热备份。</li>
+<li>采用MVCC支持高并发，实现了四个标准的隔离级别，通过间隙锁策略防止幻读的出现。</li>
+<li>基于聚簇索引，对主键查询有很高的性能。</li>
+<li>存储格式平台独立。<br>&nbsp;</li>
+</ul>
+<p>MyISAM</p>
+]]></content>
+      
+        <categories>
+            
+            <category> MySQL </category>
+            
+            <category> 学习 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[高性能MySQL学习笔记1.4-多版本并发控制(MVCC)]]></title>
+      <url>/2017/11/23/e9-ab-98-e6-80-a7-e8-83-bdmysql-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b01-4-e5-a4-9a-e7-89-88-e6-9c-ac-e5-b9-b6-e5-8f-91-e6-8e-a7-e5-88-b6mvcc/</url>
+      <content type="html"><![CDATA[<p>实现：</p>
+<ul>
+<li><p>通过保存数据在某个时间点的快照。InnoDB引擎在每行记录后面保存有两个隐藏的列，分别为行的创建时间和行的过期时间(系统版本号)，每开始一个新的事务，系统版本号都会自动递增。事务开始时刻的系统版本号会作为事务的版本号，用来和查询到的每行记录的版本号进行比较。</p>
+<ul>
+<li>不管执行需要多长时间，每个事务看到的数据都是一致的。</li>
+<li>根据事务开始的时间不同，每个事务对同一张表、同一时刻看到的数据可能是不一样的。</li>
+<li>这两个额外系统版本号，使大多数读操作都可以不用加锁。<br>&nbsp;</li>
+</ul>
+</li>
+</ul>
+<p>特性：</p>
+<ul>
+<li>多版本并发控制只在REPEATABLE READ和READ COMMITTED两个隔离级别下工作。READ UNCOMMITTED总是读取最新的数据行。SERIALIZABLE则会对所有读取的行都加锁。<br>&nbsp;</li>
+</ul>
+<p>类型：</p>
+<ul>
+<li>乐观并发控制(optimistic)</li>
+<li>悲观迸发控制(pessimistic)</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> MySQL </category>
+            
+            <category> 学习 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[高性能MySQL学习笔记1.3-并发控制]]></title>
+      <url>/2017/11/23/e9-ab-98-e6-80-a7-e8-83-bdmysql-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e5-b9-b6-e5-8f-91-e6-8e-a7-e5-88-b6/</url>
+      <content type="html"><![CDATA[<p>&nbsp;</p>
+<p>并发控制</p>
+<ul>
+<li>只要有多个查询需要在同一时刻修改数据，就会产生并发控制的问题。</li>
+<li><p>在处理并发读或写时可以用锁系统来解决，锁有两种类型。</p>
+<ul>
+<li>共享锁（读锁），多个客户在同一时刻可以同时读取同一个资源。</li>
+<li>排他锁（写锁），会阻塞其他的写锁和读锁。<br>&nbsp;</li>
+</ul>
+</li>
+</ul>
+<p>锁粒度</p>
+<ul>
+<li><p>表锁</p>
+<ul>
+<li>会锁定整张表，阻塞其他用户对该表的所有读和写操作。</li>
+</ul>
+</li>
+<li><p>行锁<br>&nbsp;</p>
+</li>
+</ul>
+<p>事务</p>
+<ul>
+<li>原子性</li>
+<li>一致性</li>
+<li>隔离性</li>
+<li><p>持久性<br>隔离级别</p>
+</li>
+<li><p>READ UNCOMMITTED(未提交读)</p>
+<ul>
+<li>事务中的修改即使没有提交，对其他事务也都是可见的。脏读。</li>
+</ul>
+</li>
+<li><p>READ COMMITTED(提交读)</p>
+<ul>
+<li>一个事务从开始直到提交之前，所做的任何修改对其他事务都是不可见的。不可重复读。</li>
+</ul>
+</li>
+<li><p>REPEATABLE READ(可重复读)</p>
+<ul>
+<li>当某个事务在读取某个范围内的记录时，另外一个事务又在该范围内插入了新的记录，当之前的事务再次读取该范围内的记录时，会产生幻行。</li>
+<li>是MySQL默认事务隔离级别</li>
+</ul>
+</li>
+<li><p>SERIALIZABLE(可串行化)</p>
+<ul>
+<li>最高的隔离级别</li>
+<li>强制事务串行执行，避免幻读</li>
+<li>在读取的每一行数据上都加锁<br>&nbsp;</li>
+</ul>
+</li>
+</ul>
+<p>死锁</p>
+<ul>
+<li>两个或多个事务在同一资源上相互占用，并请求锁定对方占用的资源，从而导致恶性循环的现象。<br>&nbsp;</li>
+</ul>
+<p>MySQL中的事务</p>
+<ul>
+<li><p>自动提交</p>
+<ul>
+<li>如果不是显式地开始一个事务，则每个查询都被当作一个事务执行提交操作。<br>&nbsp;</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+]]></content>
+      
+        <categories>
+            
+            <category> MySQL </category>
+            
+            <category> 学习 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[SpringBoot学习笔记(一):构建第一个SpringBoot程序]]></title>
+      <url>/2017/11/23/springboot-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e4-b8-80-e6-9e-84-e5-bb-ba-e7-ac-ac-e4-b8-80-e4-b8-aaspringboot-e7-a8-8b-e5-ba-8f/</url>
+      <content type="html"><![CDATA[<p>简介：Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。通过这种方式，Spring Boot致力于在蓬勃发展的快速应用开发领域(rapid application development)成为领导者。</p>
+<p>特点：</p>
+<p><div class="para" style="padding-left: 30px;">1. 创建独立的Spring应用程序</div></p>
+<p><div class="para" style="padding-left: 30px;">2. 嵌入的Tomcat，无需部署WAR文件</div></p>
+<p><div class="para" style="padding-left: 30px;">3. 简化Maven配置</div></p>
+<p><div class="para" style="padding-left: 30px;">4. 自动配置Spring</div></p>
+<p><div class="para" style="padding-left: 30px;">5. 提供生产就绪型功能，如指标，健康检查和外部配置</div></p>
+<p><div class="para" style="padding-left: 30px;">6. 绝对没有代码生成和对XML没有要求配置</div></p>
+<p><div></div></p>
+<p><div>构建工程：</div></p>
+<p><div>    工具:IntelliJ Idea</div></p>
+<p><div>    步骤:File-&gt;new -&gt;Project-&gt;Spring Initializr-&gt;next 填入Group Id 和Artifact-&gt;next 选中web -&gt;finish</div></p>
+<p><div>    项目结构:</div></p>
+<p><div></div></p>
+<pre class="lang:default decode:true" style="padding-left: 90px;">- src
+    -main
+        -java
+            -package
+                -SpringbootApplication
+        -resouces
+            - statics
+            - templates
+            - application.properties
+    -test
+- pom</pre>
+
+<p>备注:</p>
+<p>pom文件为基本的依赖管理文件</p>
+<p>resouces 资源文件</p>
+<p>statics 静态资源</p>
+<p>templates 模板资源</p>
+<p>application.yml 配置文件</p>
+<ul>
+<li>SpringbootApplication程序的入口。<br><br>&nbsp;</li>
+</ul>
+<p>POM文件的依赖</p>
+<p><pre class="lang:default decode:true ">&lt;?xml version=”1.0” encoding=”UTF-8”?&gt;<br>&lt;project xmlns=”<a href="http://maven.apache.org/POM/4.0.0" target="_blank" rel="noopener">http://maven.apache.org/POM/4.0.0</a>“ xmlns:xsi=”<a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="noopener">http://www.w3.org/2001/XMLSchema-instance</a>“<br>    xsi:schemaLocation=”<a href="http://maven.apache.org/POM/4.0.0" target="_blank" rel="noopener">http://maven.apache.org/POM/4.0.0</a> <a href="http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&amp;gt" target="_blank" rel="noopener">http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&amp;gt</a>;<br>    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</pre></p>
+<pre><code>&amp;lt;groupId&amp;gt;cn.donsion.springboot&amp;lt;/groupId&amp;gt;
+&amp;lt;artifactId&amp;gt;demo&amp;lt;/artifactId&amp;gt;
+&amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt;
+&amp;lt;packaging&amp;gt;jar&amp;lt;/packaging&amp;gt;
+
+&amp;lt;name&amp;gt;demo&amp;lt;/name&amp;gt;
+&amp;lt;description&amp;gt;Demo project for Spring Boot&amp;lt;/description&amp;gt;
+
+&amp;lt;parent&amp;gt;
+    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;1.5.8.RELEASE&amp;lt;/version&amp;gt;
+    &amp;lt;relativePath/&amp;gt; &amp;lt;!-- lookup parent from repository --&amp;gt;
+&amp;lt;/parent&amp;gt;
+
+&amp;lt;properties&amp;gt;
+    &amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncoding&amp;gt;
+    &amp;lt;project.reporting.outputEncoding&amp;gt;UTF-8&amp;lt;/project.reporting.outputEncoding&amp;gt;
+    &amp;lt;java.version&amp;gt;1.8&amp;lt;/java.version&amp;gt;
+&amp;lt;/properties&amp;gt;
+
+&amp;lt;dependencies&amp;gt;
+    &amp;lt;dependency&amp;gt;
+        &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+        &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt;
+    &amp;lt;/dependency&amp;gt;
+
+    &amp;lt;dependency&amp;gt;
+        &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+        &amp;lt;artifactId&amp;gt;spring-boot-starter-test&amp;lt;/artifactId&amp;gt;
+        &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt;
+    &amp;lt;/dependency&amp;gt;
+
+&amp;lt;/dependencies&amp;gt;
+
+&amp;lt;build&amp;gt;
+    &amp;lt;plugins&amp;gt;
+        &amp;lt;plugin&amp;gt;
+            &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;spring-boot-maven-plugin&amp;lt;/artifactId&amp;gt;
+        &amp;lt;/plugin&amp;gt;
+    &amp;lt;/plugins&amp;gt;
+&amp;lt;/build&amp;gt;
+</code></pre><p>&lt;/project&gt;<br><br>&nbsp;</p>
+<p>建立Controller</p>
+<p><pre class="lang:java decode:true">package cn.donsion.springboot.demo.controller;</pre></p>
+<p>import org.springframework.web.bind.annotation.RequestMapping;<br>import org.springframework.web.bind.annotation.RestController;</p>
+<p>/**</p>
+<ul>
+<li>@author dongxian</li>
+<li><p>@create 2017-11-22 17:47<br>**/<br>@RestController<br>public class HelloController {</p>
+<p> @RequestMapping(“/“)<br> public String index(){</p>
+<pre><code>return &quot;Greetings from Spring Boot!&quot;;
+</code></pre><p> }<br>}<br><br>&nbsp;</p>
+</li>
+</ul>
+<p>启动SpringbootFirstApplication的main方法，打开浏览器localhost:8080,浏览器显示：</p>
+<p>Greetings from Spring Boot!</p>
+<p>&nbsp;</p>
+<h4 id="神奇之处："><a href="#神奇之处：" class="headerlink" title="神奇之处："></a>神奇之处：</h4><ul>
+<li>你没有做任何的web.xml配置。</li>
+<li>你没有做任何的sping mvc的配置; springboot为你做了。</li>
+<li>你没有配置tomcat ;springboot内嵌tomcat.<br>&nbsp;</li>
+</ul>
+<h4 id="启动springboot-方式"><a href="#启动springboot-方式" class="headerlink" title="启动springboot 方式"></a>启动springboot 方式</h4><p>cd到项目主目录,mvn clean然后mvn package将项目打包</p>
+<p><pre class="lang:default decode:true">drwxr-xr-x  11 dongxian  staff   352B Nov 22 20:20 ./<br>drwxr-xr-x   9 dongxian  staff   288B Nov 21 12:32 ../<br>-rw-r–r–   1 dongxian  staff   249B Nov 21 12:32 .gitignore<br>drwxr-xr-x  11 dongxian  staff   352B Nov 23 00:23 .idea/<br>drwxr-xr-x   3 dongxian  staff    96B Nov 21 12:32 .mvn/<br>-rw-r–r–   1 dongxian  staff   6.3K Nov 22 20:20 SpringBootDemo.iml<br>-rwxr-xr-x   1 dongxian  staff   6.3K Nov 21 12:32 mvnw*<br>-rw-r–r–   1 dongxian  staff   4.9K Nov 21 12:32 mvnw.cmd<br>-rw-r–r–   1 dongxian  staff   1.6K Nov 22 20:20 pom.xml<br>drwxr-xr-x   4 dongxian  staff   128B Nov 21 12:32 src/<br>drwxr-xr-x  11 dongxian  staff   352B Nov 22 19:41 target/<br>dongxian@Donsions-MacBook:~/Documents/workspace/SpringBootDemo$ mvn clean<br>dongxian@Donsions-MacBook:~/Documents/workspace/SpringBootDemo$ mvn package<br></pre><br>cd到target目录</p>
+<p><pre class="lang:default decode:true">dongxian@Donsions-MacBook:~/Documents/workspace/SpringBootDemo/target$ <span style="color: #ff0000;">java -jar demo-0.0.1-SNAPSHOT.jar<br></span></pre><br>&nbsp;</p>
+<p>浏览器访问</p>
+]]></content>
+      
+        <categories>
+            
+            <category> SpringBoot </category>
+            
+            <category> 学习 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Spring Boot干货系列：配置文件解析]]></title>
+      <url>/2017/11/22/spring-boot-e5-b9-b2-e8-b4-a7-e7-b3-bb-e5-88-97-ef-bc-9a-e9-85-8d-e7-bd-ae-e6-96-87-e4-bb-b6-e8-a7-a3-e6-9e-90/</url>
+      <content type="html"><![CDATA[<div></div><br><div><br><div><a href="http://7xqch5.com1.z0.glb.clouddn.com/spring.jpg" target="_blank" rel="noopener"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAFCAl4DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDXooor4o8EKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKsWNpNe3UcFuheRjgVUYuTshxjzF7wzo76zfiEZEY+83pVXVbQ2OoTW5z+7OK9T8N2th4fhS0edPtkmN5zx9K4z4jWhh115x92YZHvXoVsKqdBPqdU6PLC/U5OiiivNOQKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiitbQtBu9YmxAhEQ+9IRwKuFN1HZFRi5OyKNjZz3tysFqheR+1el6PpNp4U02W7vpAbhlwx7gn0rU0LRLLQIgiFTPJ96U/xfSs7xDLH/wAJBZjUyws1B2DHDfWvZoYVUo80tzup0fZK73Ma5jtzpBGwy3104KHPLj+lS/EOykGkWEshzJEgDGrOn3WkWt3JqkyNHGDi3kYZLfQVN4h1jTtb0K7t7KZmuPvgOuDVTUXSkm9RtJxep5dRQRg4NFeEecFFFFIAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKK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UUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRTAKKKKQBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB//Z" alt="">
+</a></div>
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><div>上一篇介绍了Spring Boot的入门，知道了Spring Boot使用“习惯优于配置”（项目中存在大量的配置，此外还内置了一个习惯性的配置，让你无需手动进行配置）的理念让你的项目快速运行起来。所以，我们要想把Spring Boot玩的溜，就要懂得如何开启各个功能模块的默认配置，这就需要了解Spring Boot的配置文件application.properties。</div>
+
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><div>Spring Boot使用了一个全局的配置文件application.properties，放在src/main/resources目录下或者类路径的/config下。Sping Boot的全局配置文件的作用是对一些默认配置的配置值进行修改。</div><br><div>接下来，让我们一起来解开配置文件的面纱。</div><br>&gt; <div>注:如果你工程没有这个application.properties，那就在src/main/java/resources目录下新建一个。</div>
+
+<h2 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h2><div>application.properties提供自定义属性的支持，这样我们就可以把一些常量配置在这里：</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div></td><br><td><br><div>com.dudu.name=”嘟嘟MD”</div><br><div>com.dudu.want=”祝大家鸡年大吉吧”</div></td><br></tr><br></tbody><br></table><br><div></div><br></div><br><div>然后直接在要使用的地方通过注解@Value(value=”${config.name}”)就可以绑定到你想要的属性上面</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div><br><div>2</div><br><div>3</div><br><div>4</div><br><div>5</div><br><div>6</div><br><div>7</div><br><div>8</div><br><div>9</div><br><div>10</div><br><div>11</div><br><div>12</div><br><div>13</div></td><br><td><br><div>@RestController</div><br><div>public class UserController {</div><br><div></div><br><div>@Value(“${com.dudu.name}”)</div><br><div>private String name;</div><br><div>@Value(“${com.dudu.want}”)</div><br><div>private String want;</div><br><div></div><br><div>@RequestMapping(“/“)</div><br><div>public String hexo(){</div><br><div>return name+”,”+want;</div><br><div>}</div><br><div>}</div></td><br></tr><br></tbody><br></table><br><div></div><br></div><br><div>我们启动工程输入<a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080</a> 就可以看到打印了”嘟嘟MD祝大家鸡年大吉吧”。</div><br><div>有时候属性太多了，一个个绑定到属性字段上太累，官方提倡绑定一个对象的bean，这里我们建一个ConfigBean.java类，顶部需要使用注解@ConfigurationProperties(prefix = “com.dudu”)来指明使用哪个</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div><br><div>2</div><br><div>3</div><br><div>4</div><br><div>5</div><br><div>6</div><br><div>7</div></td><br><td><br><div>@ConfigurationProperties(prefix = “com.dudu”)</div><br><div>public class ConfigBean {</div><br><div>private String name;</div><br><div>private String want;</div><br><div></div><br><div>// 省略getter和setter</div><br><div>}</div></td><br></tr><br></tbody><br></table><br><div></div><br></div><br><div>这里配置完还需要在spring Boot入口类加上@EnableConfigurationProperties并指明要加载哪个bean，如果不写ConfigBean.class，在bean类那边添加</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div><br><div>2</div><br><div>3</div><br><div>4</div><br><div>5</div><br><div>6</div><br><div>7</div><br><div>8</div></td><br><td><br><div>@SpringBootApplication</div><br><div>@EnableConfigurationProperties({ConfigBean.class})</div><br><div>public class Chapter2Application {</div><br><div></div><br><div>public static void main(String[] args) {</div><br><div>SpringApplication.run(Chapter2Application.class, args);</div><br><div>}</div><br><div>}</div></td><br></tr><br></tbody><br></table><br><div></div><br></div><br><div>最后在Controller中引入ConfigBean使用即可，如下：</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div><br><div>2</div><br><div>3</div><br><div>4</div><br><div>5</div><br><div>6</div><br><div>7</div><br><div>8</div><br><div>9</div><br><div>10</div></td><br><td><br><div>@RestController</div><br><div>public class UserController {</div><br><div>@Autowired</div><br><div>ConfigBean configBean;</div><br><div></div><br><div>@RequestMapping(“/“)</div><br><div>public String hexo(){</div><br><div>return configBean.getName()+configBean.getWant();</div><br><div>}</div><br><div>}</div></td><br></tr><br></tbody><br></table><br><div></div><br></div>
+
+<h2 id="参数间引用"><a href="#参数间引用" class="headerlink" title="参数间引用"></a>参数间引用</h2><div>在application.properties中的各个参数之间也可以直接引用来使用，就像下面的设置：</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div><br><div>2</div><br><div>3</div></td><br><td><br><div>com.dudu.name=”嘟嘟MD”</div><br><div>com.dudu.want=”祝大家鸡年大吉吧”</div><br><div>com.dudu.yearhope=${com.dudu.name}在此${com.dudu.want}</div></td><br></tr><br></tbody><br></table><br><div></div><br></div><br><div>这样我们就可以只是用yearhope这个属性就好</div>
+
+<h2 id="使用自定义配置文件"><a href="#使用自定义配置文件" class="headerlink" title="使用自定义配置文件"></a>使用自定义配置文件</h2><div>有时候我们不希望把所有配置都放在application.properties里面，这时候我们可以另外定义一个，这里我明取名为test.properties,路径跟也放在src/main/resources下面。</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div><br><div>2</div></td><br><td><br><div>com.md.name=”哟西~”</div><br><div>com.md.want=”祝大家鸡年,大吉吧”</div></td><br></tr><br></tbody><br></table><br><div></div><br></div><br><div>我们新建一个bean类,如下：</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div><br><div>2</div><br><div>3</div><br><div>4</div><br><div>5</div><br><div>6</div><br><div>7</div><br><div>8</div></td><br><td><br><div>@Configuration</div><br><div>@ConfigurationProperties(prefix = “com.md”)</div><br><div>@PropertySource(“classpath:test.properties”)</div><br><div>public class ConfigTestBean {</div><br><div>private String name;</div><br><div>private String want;</div><br><div>// 省略getter和setter</div><br><div>}</div></td><br></tr><br></tbody><br></table><br><div></div><br></div><br><div>这里要注意哦，有一个问题，如果你使用的是1.5以前的版本，那么可以通过locations指定properties文件的位置，这样：</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div></td><br><td><br><div>@ConfigurationProperties(prefix = “config2”,locations=”classpath:test.properties”)</div></td><br></tr><br></tbody><br></table><br><div></div><br></div><br><div>但是1.5版本后就没有这个属性了，找了半天发现添加@Configuration和@PropertySource(“classpath:test.properties”)后才可以读取。</div>
+
+<h2 id="随机值配置"><a href="#随机值配置" class="headerlink" title="随机值配置"></a>随机值配置</h2><div>配置文件中${random} 可以用来生成各种不同类型的随机值，从而简化了代码生成的麻烦，例如 生成 int 值、long 值或者 string 字符串。</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div><br><div>2</div><br><div>3</div><br><div>4</div><br><div>5</div><br><div>6</div></td><br><td><br><div>dudu.secret=${random.value}</div><br><div>dudu.number=${random.int}</div><br><div>dudu.bignumber=${random.long}</div><br><div>dudu.uuid=${random.uuid}</div><br><div>dudu.number.less.than.ten=${random.int(10)}</div><br><div>dudu.number.in.range=${random.int[1024,65536]}</div></td><br></tr><br></tbody><br></table><br><div></div><br></div>
+
+<h2 id="外部配置-命令行参数配置"><a href="#外部配置-命令行参数配置" class="headerlink" title="外部配置-命令行参数配置"></a>外部配置-命令行参数配置</h2><div>Spring Boot是基于jar包运行的，打成jar包的程序可以直接通过下面命令运行：</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div></td><br><td><br><div>java -jar xx.jar</div></td><br></tr><br></tbody><br></table><br><div></div><br></div><br><div>可以以下命令修改tomcat端口号：</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div></td><br><td><br><div>java -jar xx.jar –server.port=9090</div></td><br></tr><br></tbody><br></table><br><div></div><br></div><br><div><br><div>可以看出，命令行中连续的两个减号–就是对application.properties中的属性值进行赋值的标识。</div><br><div>所以java -jar xx.jar –server.port=9090等价于在application.properties中添加属性server.port=9090。</div><br><div>如果你怕命令行有风险，可以使用SpringApplication.setAddCommandLineProperties(false)禁用它。</div><br></div><br><div>实际上，Spring Boot应用程序有多种设置途径，Spring Boot能从多重属性源获得属性，包括如下几种：</div>
+
+<ul>
+<li>根目录下的开发工具全局设置属性(当开发工具激活时为~/.spring-boot-devtools.properties)。</li>
+<li>测试中的@TestPropertySource注解。</li>
+<li>测试中的@SpringBootTest#properties注解特性。</li>
+<li>命令行参数</li>
+<li>SPRING_APPLICATION_JSON中的属性(环境变量或系统属性中的内联JSON嵌入)。</li>
+<li>ServletConfig初始化参数。</li>
+<li>ServletContext初始化参数。</li>
+<li>java:comp/env里的JNDI属性</li>
+<li>JVM系统属性</li>
+<li>操作系统环境变量</li>
+<li>随机生成的带random.* 前缀的属性（在设置其他属性时，可以应用他们，比如${random.long}）</li>
+<li>应用程序以外的application.properties或者appliaction.yml文件</li>
+<li>打包在应用程序内的application.properties或者appliaction.yml文件</li>
+<li>通过@PropertySource标注的属性源</li>
+<li>默认属性(通过SpringApplication.setDefaultProperties指定).<div>这里列表按组优先级排序，也就是说，任何在高优先级属性源里设置的属性都会覆盖低优先级的相同属性，列如我们上面提到的命令行属性就覆盖了application.properties的属性。</div>
+
+</li>
+</ul>
+<h2 id="配置文件的优先级"><a href="#配置文件的优先级" class="headerlink" title="配置文件的优先级"></a>配置文件的优先级</h2><div>application.properties和application.yml文件可以放在一下四个位置：</div>
+
+<ul>
+<li>外置，在相对于应用程序运行目录的/congfig子目录里。</li>
+<li>外置，在应用程序运行的目录里</li>
+<li>内置，在config包内</li>
+<li>内置，在Classpath根目录<div><br><div>同样，这个列表按照优先级排序，也就是说，src/main/resources/config下application.properties覆盖src/main/resources下application.properties中相同的属性，如图：</div><br></div><br><div><a href="http://7xqch5.com1.z0.glb.clouddn.com/springboot2-1.jpg" target="_blank" rel="noopener"><img src="data:image/jpeg;base64,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" alt="">
+</a></div><br><div>此外，如果你在相同优先级位置同时有application.properties和application.yml，那么application.yml里面的属性就会覆盖application.properties里的属性。</div>
+
+</li>
+</ul>
+<h2 id="Profile-多环境配置"><a href="#Profile-多环境配置" class="headerlink" title="Profile-多环境配置"></a>Profile-多环境配置</h2><div><br><div>当应用程序需要部署到不同运行环境时，一些配置细节通常会有所不同，最简单的比如日志，生产日志会将日志级别设置为WARN或更高级别，并将日志写入日志文件，而开发的时候需要日志级别为DEBUG，日志输出到控制台即可。</div><br><div>如果按照以前的做法，就是每次发布的时候替换掉配置文件，这样太麻烦了，Spring Boot的Profile就给我们提供了解决方案，命令带上参数就搞定。</div><br></div><br><div><br><div>这里我们来模拟一下，只是简单的修改端口来测试</div><br><div>在Spring Boot中多环境配置文件名需要满足application-{profile}.properties的格式，其中{profile}对应你的环境标识，比如：</div><br></div>
+
+<ul>
+<li>application-dev.properties：开发环境</li>
+<li>application-prod.properties：生产环境<div><br><div>想要使用对应的环境，只需要在application.properties中使用spring.profiles.active属性来设置，值对应上面提到的{profile}，这里就是指dev、prod这2个。</div><br><div>当然你也可以用命令行启动的时候带上参数：</div><br></div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div></td><br><td><br><div>java -jar xxx.jar –spring.profiles.active=dev</div></td><br></tr><br></tbody><br></table><br><div></div><br></div><br><div>我给不同的环境添加不同的端口属性server.port，然后根据指定不同的spring.profiles.active来切换使用。各位可以自己试试。这里就不贴代码了。</div><br><div>除了可以用profile的配置文件来分区配置我们的环境变量，在代码里，我们还可以直接用@Profile注解来进行配置，例如数据库配置，这里我们先定义一个接口</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div></td><br><td><br><div>public interface DBConnector { public void configure(); }</div></td><br></tr><br></tbody><br></table><br><div></div><br></div><br><div>分别定义俩个实现类来实现它</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div><br><div>2</div><br><div>3</div><br><div>4</div><br><div>5</div><br><div>6</div><br><div>7</div><br><div>8</div><br><div>9</div><br><div>10</div><br><div>11</div><br><div>12</div><br><div>13</div><br><div>14</div><br><div>15</div><br><div>16</div><br><div>17</div><br><div>18</div><br><div>19</div><br><div>20</div><br><div>21</div><br><div>22</div></td><br><td><br><div>/<strong></strong></div><br><div><em> 测试数据库</em></div><br><div>/</div><br><div>@Component</div><br><div>@Profile(“testdb”)</div><br><div>public class TestDBConnector implements DBConnector {</div><br><div>@Override</div><br><div>public void configure() {</div><br><div>System.out.println(“testdb”);</div><br><div>}</div><br><div>}</div><br><div>/</div><br><div><em> 生产数据库</em></div><br><div>/</div><br><div>@Component</div><br><div>@Profile(“devdb”)</div><br><div>public class DevDBConnector implements DBConnector {</div><br><div>@Override</div><br><div>public void configure() {</div><br><div>System.out.println(“devdb”);</div><br><div>}</div><br><div>}</div></td><br></tr><br></tbody><br></table><br><div></div><br></div><br><div>通过在配置文件激活具体使用哪个实现类</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div></td><br><td><br><div>spring.profiles.active=testdb</div></td><br></tr><br></tbody><br></table><br><div></div><br></div><br><div>然后就可以这么用了</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div><br><div>2</div><br><div>3</div><br><div>4</div><br><div>5</div><br><div>6</div><br><div>7</div><br><div>8</div><br><div>9</div><br><div>10</div><br><div>11</div><br><div>12</div><br><div>13</div></td><br><td><br><div>@RestController</div><br><div>@RequestMapping(“/task”)</div><br><div>public class TaskController {</div><br><div></div><br><div>@Autowired DBConnector connector ;</div><br><div></div><br><div>@RequestMapping(value = {“/“,””})</div><br><div>public String hellTask(){</div><br><div></div><br><div>connector.configure(); //最终打印testdb</div><br><div>return “hello task !! myage is “ + myage;</div><br><div>}</div><br><div>}</div></td><br></tr><br></tbody><br></table><br><div></div><br></div><br><div>除了spring.profiles.active来激活一个或者多个profile之外，还可以用spring.profiles.include来叠加profile</div><br><div><br><div></div><br><table><colgroup><col><col></colgroup><br><tbody><br><tr><br><td><br><div>1</div></td><br><td><br><div>spring.profiles.active: testdb</div><br><div>spring.profiles.include: proddb,prodmq</div></td><br></tr><br></tbody><br></table><br><div></div><br></div>
+
+</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><div>这次对Spring Boot中application.properties配置文件做的整理总结希望对大家有所帮助，最后贴上Spring Boot中常用的配置属性，需要的时候可打开查找。</div><br><div>(￣︶￣)↗<a href="http://tengj.top/2017/02/28/springbootconfig/" target="_blank" rel="noopener">Spring Boot干货系列：常用属性汇总</a></div><br><div>想要查看更多Spring Boot干货教程,可前往：<a href="http://tengj.top/2017/04/24/springboot0/" target="_blank" rel="noopener">Spring Boot干货系列总纲</a></div>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><div><br><div><a href="http://blog.didispace.com/springbootproperties/" target="_blank" rel="noopener">Spring Boot属性配置文件详解</a></div><br><div><a href="http://blog.csdn.net/yingxiake/article/details/51263679" target="_blank" rel="noopener">spring boot 使用profile来分区配置</a></div><br><div>Spring Boot实战</div><br><div>JavaEE开发的颠覆者Spring Boot实战</div><br></div><br><div><br><br>##<br><br></div><br></div>]]></content>
+      
+        <categories>
+            
+            <category> SpringBoot </category>
+            
+            <category> 学习 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> springboot </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Mac OS X下Maven的安装与配置]]></title>
+      <url>/2017/11/22/mac-os-x-e4-b8-8bmaven-e7-9a-84-e5-ae-89-e8-a3-85-e4-b8-8e-e9-85-8d-e7-bd-ae/</url>
+      <content type="html"><![CDATA[<p>Mac OS X 安装Maven:</p>
+<ul>
+<li>下载 <a href="https://maven.apache.org/download.cgi" target="_blank" rel="noopener">Maven</a>, 并解压到某个目录。例如/Users/robbie/apache-maven-3.3.3</li>
+<li><p>打开<code>Terminal</code>,输入以下命令，设置<code>Maven classpath</code></p>
+<p> $ vi ~/.bash_profile<code>&lt;/pre&gt;
+添加下列两行代码，之后保存并退出</code>Vi<code>：
+&lt;pre class=&quot;hljs undefined&quot;&gt;</code> export M2_HOME=/Users/robbie/apache-maven-3.3.3<br> export PATH=$PATH:$M2_HOME/bin`</p>
+<div class="image-package"><img src="http://upload-images.jianshu.io/upload_images/420187-6947fe0af3933d3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><div class="image-caption">bash_profile</div><br></div>
+</li>
+<li><p>输入命令以使<code>bash_profile</code>生效<br><pre class="hljs undefined">` $ source ~/.bash_profile</pre></p>
+</li>
+<li><p>输入<code>mvn -v</code>查看<code>Maven</code>是否安装成功</p>
+</li>
+<li>如果遇到以下异常，重新编辑<code>bash_profile</code>文件，增加<code>export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_11.jdk/Contents/Home</code>后，并重新运行<code>$ source ~/.bash_profile</code>即可。<div class="image-package"><img src="http://upload-images.jianshu.io/upload_images/420187-21014c26d4442c05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><div class="image-caption"></div><br></div><br><div class="image-package"><img src="http://upload-images.jianshu.io/upload_images/420187-0b45f0a40e8da2f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><div class="image-caption"></div><br></div><br><div class="image-package"><img src="http://upload-images.jianshu.io/upload_images/420187-fee2d6db07d70ca8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><div class="image-caption"></div><br></div></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 学习 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MySQL insert into select 组合使用]]></title>
+      <url>/2017/11/21/mysql-insert-into-select-e7-bb-84-e5-90-88-e4-bd-bf-e7-94-a8/</url>
+      <content type="html"><![CDATA[<p>如何在<span lang="EN-US">mysql</span>从多个表中组合字段然后插入到一个新表中，通过一条<span lang="EN-US">sql</span>语句实现。具体情形是：有三张表<span lang="EN-US">a</span>、<span lang="EN-US">b</span>、<span lang="EN-US">c</span>，现在需要从表<span lang="EN-US">b</span>和表<span lang="EN-US">c</span>中分别查几个字段的值插入到表<span lang="EN-US">a</span>中对应的字段。对于这种情况，我们可以使用如下的语句来实现：</p>
+<p><pre class="lang:default decode:true ">    INSERT INTO db1_name(field1,field2) SELECT field1,field2 FROM db2_name</pre></p>
+<p><br>&nbsp;</p>
+<p><span lang="EN-US">      </span>当然，上面的语句比较适合两个表的数据互插，如果多个表就不适应了。对于多个表，我们可以先将需要查询的字段<span lang="EN-US">join</span>起来，然后组成一个视图后再<span lang="EN-US">select from</span>就可以了：</p>
+<p><pre class="font:arial lang:mysql decode:true ">    INSERT INTO a(field1,field2) SELECT * FROM(SELECT f1,f2 FROM b JOIN c) AS tb</pre></p>
+<p><br>&nbsp;</p>
+<p><span lang="EN-US">      </span>其中<span lang="EN-US">f1</span>是表<span lang="EN-US">b</span>的字段，<span lang="EN-US">f2</span>是表<span lang="EN-US">c</span>的字段，通过<span lang="EN-US">join</span>查询就将分别来自表<span lang="EN-US">b</span>和表<span lang="EN-US">c</span>的字段进行了组合，然后再通过<span lang="EN-US">select</span>嵌套查询插入到表<span lang="EN-US">a</span>中，这样就满足了我们这个场景了，如果需要不止<span lang="EN-US">2</span>个表，那么可以多个<span lang="EN-US">join</span>的形式来组合字段。需要注意的是嵌套查询部分最后一定要有设置表别名，如下：</p>
+<p><span lang="EN-US">     </span><strong><span lang="EN-US">SELECT</span></strong><span lang="EN-US"> <em> <strong>FROM</strong>(<strong>SELECT</strong> f1,f2 <strong>FROM</strong> b <strong>JOIN</strong> c) <em>*AS</em></em> tb</span></p>
+<p><span lang="EN-US">      </span>即最后的<strong><span lang="EN-US">as tb</span></strong>是必须的（当然<span lang="EN-US">tb</span>这个名称可以随意取），即指定一个别名，否则在<span lang="EN-US">mysql</span>中会报如下错误：</p>
+<p><span lang="EN-US">     </span><span lang="EN-US">ERROR 1248 (42000): Every derived TABLE must have its own alias</span></p>
+<p><span lang="EN-US">      </span>即每个派生出来的新表都必须指定别名才可以的。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> MySQL </category>
+            
+            <category> 学习 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[关于程序执行效率的问题]]></title>
+      <url>/2017/11/15/e5-85-b3-e4-ba-8e-e7-a8-8b-e5-ba-8f-e6-89-a7-e8-a1-8c-e6-95-88-e7-8e-87-e7-9a-84-e9-97-ae-e9-a2-98/</url>
+      <content type="html"><![CDATA[<p>在学校学数据结构的时候学过程序的执行效率，时间复杂度等等，但一直都是一个理论的概念，没有在实际开发中碰到过，所以一直都没有怎么当回事，觉得目前的CPU处理速度以及固态硬盘的IO速度足够快。后来有幸参与公司的功能模块研发，临近上线，需要将旧数据迁移到新表中，数据量在千万级别，不算太大。旧数据库与新的数据库结构不同，需要用程序来实现，我写了一个脚本用来执行，执行过程中我发现速度太慢，慢得太不正常，平均写入速度在100毫秒/条，一个小时100万不到，按照这个速度进行下去我绝逼会疯掉的，于是我仔细检查代码，发现代码中的几处不足：</p>
+<p>1.数据库连接频繁创建和关闭；</p>
+<p>2.String频繁用+=进行拼接；</p>
+<p>&nbsp;</p>
+<p>解决方案是:在这个程序中使用同一个数据库连接，完成后再关闭，将String改成StringBuffer。</p>
+<p>做了以上的处理后，执行速度在1-2毫秒/条数据，可以不用加班了。</p>
+<p>&nbsp;</p>
+<p>身为程序员，细节真的很重要，养成好的习惯更重要，以前一直带着一种只要程序能够跑起来就行了的心态去写代码，这一点真的要改。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 生活 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Java中的参数传递]]></title>
+      <url>/2017/11/14/java-e4-b8-ad-e7-9a-84-e5-8f-82-e6-95-b0-e4-bc-a0-e9-80-92/</url>
+      <content type="html"><![CDATA[<p>平时在写代码的过程中，要封装一些通用的方法，以便适当的时候调用，这个时候就涉及到了参数传递的知识。然而我发现有时候在方法内部改变一个值，外部并没有改变，但有时候又能改变，对于这个问题我感到比较迷惑，所以查阅各种资料，对参数传递问题有了新的了解和掌握。</p>
+<p>简单点说总结为:</p>
+<p>java中方法参数传递方式是按值传递。<br>如果参数是基本类型，传递的是基本类型的字面量值的拷贝。<br>如果参数是引用类型，传递的是该参量所引用的对象在堆中地址值的拷贝</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Java </category>
+            
+            <category> 学习 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Java中List的contains()方法使用]]></title>
+      <url>/2017/11/08/list-e7-9a-84contains-e6-96-b9-e6-b3-95-e4-bd-bf-e7-94-a8/</url>
+      <content type="html"><![CDATA[<p>应用场景举例：从数据库里面查出用户List列表，要判断一个List&lt;User&gt;里面是否包含User A；</p>
+<p>描述：用默认的contains方法肯定是无法得到正确返回结果的，因为我们将用户id作为唯一标识。List的 contains(o)方法，系统会对list中的每个元素e调用o.equals(e)，方法，加入list中有n个元素，那么会调用n次o.equals(e)，只要有一次o.equals(e)返回了true，那么list.contains(o)返回true，否则返回false。所以我们要根据自己的业务需求来改写equals方法，如：</p>
+<pre class="">Class User{
+
+    private Integer id;
+
+    getXxx;
+    setXxx;
+
+    @Override
+    public booelan equals(Object o){
+         if (this == o) return true;
+         if (o == null || getClass() != o.getClass()) return false;
+         User other = (User) o;
+       if(this.id.equals((User) o).id)) return true;
+    }
+}
+
+</pre>]]></content>
+      
+        <categories>
+            
+            <category> Java </category>
+            
+            <category> 学习 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[世界，您好！]]></title>
+      <url>/2017/11/05/hello-world-1/</url>
+      <content type="html"><![CDATA[<p>第N次搭建这玩意儿，释放过N台阿里云主机，这次应该是最后一次了！</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 生活 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+  
+  
+</search>
